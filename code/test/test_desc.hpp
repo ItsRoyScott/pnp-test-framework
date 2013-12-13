@@ -69,6 +69,12 @@ struct test_desc : public rs::base_test_desc<T>{};
   }; \
   void object_name##test_name##_test::run()
 
+// Defines a test class, allowing you to store variables used for the test.
+// Follow with class curly braces and semicolon: {};.
+// Add fields you'd like to the class and add a function with the signature
+//   `void run() override` to execute test code.
+#define deftest_class(class_name) struct class_name : public rs::itest
+
 // Describes a test function. Follow with function curly braces: {}.
 // Flags:
 //    objectname  sets the object name for the test (string)
@@ -80,4 +86,3 @@ struct test_desc : public rs::base_test_desc<T>{};
       test_desc(); \
     }; \
     test_desc<test_##test_t, __LINE__>::test_desc() : base_test_desc(__FILE__, __LINE__)
-
