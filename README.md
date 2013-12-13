@@ -1,7 +1,7 @@
 pnp-test-framework
 ==================
 
-Simple header-only test framework.
+Simple header-only test framework in C++11.
 
 ## Features
 
