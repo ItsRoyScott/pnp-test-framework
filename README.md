@@ -42,6 +42,17 @@ The test is automatically registered with the test harness and executed when you
 3. Add the path containing the new `test` folder to the include directories for your build.
 4. In your code `#include "test/test.hpp"`.
 
+## Compiling the Repo
+
+On Windows: <br>
+1. In the `project` folder, run either `gmake.bat` or `vs2013.bat`.<br>
+2. This will generate a Makefile or Visual Studio solution you can use to build the project.<br>
+
+On other platforms:<br>
+1. Clone the [premake-dev repo](https://bitbucket.org/premake/premake-dev) and compile.<br>
+2. Run the resulting executable file in the `code` folder with the command `./premake5 gmake`<br>
+3. This will generate a Makefile in the `project` folder.<br>
+
 ## Exercise: Add Setup/Teardown Functions
 
 Given the structure of having an `itest` separate from its `itest_desc` description object allows us to implement setup and teardown functions easily. The process would look like this:
