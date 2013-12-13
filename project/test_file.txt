@@ -1,2 +1,0 @@
-Avoid using file I/O in tests.
-The success of your test may be bound to OS filesystem conditions.
