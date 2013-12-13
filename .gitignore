@@ -1,4 +1,4 @@
-# Files as a result of compilation
+# Build files
 *.slo
 *.lo
 *.o
@@ -13,6 +13,9 @@
 *.log
 *.tlog
 *.exe
+*.lastbuildstate
+*.unsuccessfulbuild
+*.cache
 
 # Project files
 Makefile
