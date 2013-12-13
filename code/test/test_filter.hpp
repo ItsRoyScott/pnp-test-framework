@@ -22,6 +22,17 @@ namespace rs
     // include only tests with a specific name
     std::vector<std::string> test_includes;
 
+    // Default constructor.
+    test_filter() {}
+
+    // Move constructor.
+    test_filter(test_filter&& b) :
+      object_excludes(std::move(b.object_excludes)),
+      object_includes(std::move(b.object_includes)),
+      test_excludes(std::move(b.test_excludes)),
+      test_includes(std::move(b.test_includes))
+    {}
+
     // Creates a test_filter object from the command line.
     static test_filter from_command_line(int argc, char** argv)
     {
