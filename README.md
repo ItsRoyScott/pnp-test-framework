@@ -35,6 +35,13 @@ deftest_basic(fstream, file_io)
 
 The test is automatically registered with the test harness and executed when you call `test_harness::run`.
 
+## Installing into Your Project
+
+1. [Download](https://github.com/roskittle/pnp-test-framework/archive/master.zip) the repo to your machine.
+2. Copy the `test` folder (from within `code`) into your project.
+3. Add the path containing the new `test` folder to the include directories for your build.
+4. In your code `#include "test/test.hpp"`.
+
 ## Exercise: Add Setup/Teardown Functions
 
 Given the structure of having an `itest` separate from its `itest_desc` description object allows us to implement setup and teardown functions easily. The process would look like this:
