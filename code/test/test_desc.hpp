@@ -59,7 +59,7 @@ struct test_desc : public rs::base_test_desc<T>{};
   { \
     void run() override; \
   }; \
-  template <> struct test_desc<object_name##test_name##_test> : public rs::base_test_desc<object_name##test_name##_test> \
+  template <> struct test_desc<object_name##test_name##_test, __LINE__> : public rs::base_test_desc<object_name##test_name##_test, __LINE__> \
   { \
     test_desc() : base_test_desc(__FILE__, __LINE__) \
     { \
@@ -75,9 +75,9 @@ struct test_desc : public rs::base_test_desc<T>{};
 //    testname    sets the name of the test (string)
 //    timeout     override the test_harness' timeout value for this test
 #define desctest(test_t) \
-    template <> struct test_desc<test_##test_t, __COUNTER__> : public rs::base_test_desc<test_##test_t> \
+    template <> struct test_desc<test_##test_t, __LINE__> : public rs::base_test_desc<test_##test_t, __LINE__> \
     { \
       test_desc(); \
     }; \
-    test_desc<test_##test_t, __COUNTER__ - 1>::test_desc() : base_test_desc(__FILE__, __LINE__)
+    test_desc<test_##test_t, __LINE__>::test_desc() : base_test_desc(__FILE__, __LINE__)
 

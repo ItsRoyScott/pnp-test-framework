@@ -72,13 +72,14 @@ namespace rs
 
     template <typename descT, std::size_t idx = 0>
     // Registers a test via a test_desc object.
+    // Called automatically when you use a macro which defines a test_desc.
     static void register_test()
     {
       test_harness& harness = inst();
       harness.m_meta_array.emplace_back(new test_desc<descT, idx>());
     }
 
-    // Runs all tests registered with the harness.
+    // Runs all tests specified by the current filter.
     // Returns the number of failed tests.
     static int run()
     {
@@ -91,6 +92,12 @@ namespace rs
           tests.emplace_back(desc.get());
 
       return harness.run_test_array(tests);
+    }
+
+    // Returns the current timeout in milliseconds.
+    static std::chrono::milliseconds timeout()
+    {
+      return inst().m_timeout;
     }
 
     template <typename Rep, typename Period>
