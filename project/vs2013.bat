@@ -15,7 +15,7 @@ SET ORIGINAL_ENV_PATH=%PATH%
 SET PATH="%PREMAKE_PATH%"
 
 :: run premake
-premake4 vs2013
+premake5 vs2013
 
 :: restore the old path
 SET PATH=%ORIGINAL_ENV_PATH%

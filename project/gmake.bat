@@ -15,7 +15,7 @@ SET ORIGINAL_ENV_PATH=%PATH%
 SET PATH="%PREMAKE_PATH%"
 
 :: run premake
-premake4 gmake
+premake5 gmake
 
 :: restore the old path
 SET PATH=%ORIGINAL_ENV_PATH%
