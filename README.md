@@ -35,12 +35,30 @@ deftest_basic(fstream, file_io)
 
 The test is automatically registered with the test harness and executed when you call `test_harness::run`.
 
+## Installing into Your Project
+
+1. [Download](https://github.com/roskittle/pnp-test-framework/archive/master.zip) the repo to your machine.
+2. Copy the `test` folder (from within `code`) into your project.
+3. Add the path containing the new `test` folder to the include directories for your build.
+4. In your code `#include "test/test.hpp"`.
+
+## Compiling the Repo
+
+On Windows: <br>
+1. In the `project` folder, run either `gmake.bat` or `vs2013.bat`.<br>
+2. This will generate a Makefile or Visual Studio solution you can use to build the project.<br>
+
+On other platforms:<br>
+1. Clone the [premake-dev repo](https://bitbucket.org/premake/premake-dev) and compile.<br>
+2. Run the resulting executable file in the `code` folder with the command `./premake5 gmake`<br>
+3. This will generate a Makefile in the `project` folder.<br>
+
 ## Exercise: Add Setup/Teardown Functions
 
 Given the structure of having an `itest` separate from its `itest_desc` description object allows us to implement setup and teardown functions easily. The process would look like this:
 
 1. Add getters in `itest_desc` for setup/teardown functions.
 2. Add setup/teardown functions to the fields in the `base_test_desc` class.
-3. Add code in test_harness to call `setup` prior to `run` and `teardown` after `run`.
+3. Add code in `test_harness` to call `setup` prior to `run` and `teardown` after `run`.
 
 Then you can assign setup and teardown functions from within a `desctest(test_t)` function.
