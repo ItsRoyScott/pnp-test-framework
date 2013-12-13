@@ -46,6 +46,12 @@ namespace rs
       inst().m_filter = tf;
     }
 
+    // Sends a string to the current log function.
+    static void log(std::string const& str)
+    {
+      inst().m_output(str);
+    }
+
     // Returns the current log function used by the test harness.
     static output_function const& log_function()
     {
