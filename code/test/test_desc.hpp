@@ -73,7 +73,7 @@ struct test_desc : public rs::base_test_desc<T>{};
 // Follow with class curly braces and semicolon: {};.
 // Add fields you'd like to the class and add a function with the signature
 //   `void run() override` to execute test code.
-#define deftest_class(class_name) struct class_name : public rs::itest
+#define deftest_class(test_t) struct test_##test_t : public rs::itest
 
 // Describes a test function. Follow with function curly braces: {}.
 // Flags:
