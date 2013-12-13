@@ -1,5 +1,5 @@
 -- solution
-solution "pnp-test-framework"
+solution "test-framework"
   configurations { "Debug", "Release" }
   defines { "_CRT_SECURE_NO_WARNINGS" }
   flags
@@ -15,12 +15,14 @@ solution "pnp-test-framework"
   floatingpoint "Fast"
   language "C++"
   location "../project"
+  objdir "../bin/obj"
+  targetdir "../bin/"
   vectorextensions "SSE2"
   warnings "Extra"
   
   configuration "Debug"
     defines { "_DEBUG" }
-    targetsuffix "_Debug"
+    targetsuffix "-debug"
   configuration "Release"
     defines { "NDEBUG", "_RELEASE" }
     flags { "StaticRuntime" }
@@ -37,4 +39,3 @@ project "test-framework"
   files { "**.hpp", "**.cpp" }
   kind "ConsoleApp"
   location "../project"
-  targetdir "../bin/"
