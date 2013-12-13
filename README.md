@@ -59,6 +59,6 @@ Given the structure of having an `itest` separate from its `itest_desc` descript
 
 1. Add getters in `itest_desc` for setup/teardown functions.
 2. Add setup/teardown functions to the fields in the `base_test_desc` class.
-3. Add code in test_harness to call `setup` prior to `run` and `teardown` after `run`.
+3. Add code in `test_harness` to call `setup` prior to `run` and `teardown` after `run`.
 
 Then you can assign setup and teardown functions from within a `desctest(test_t)` function.
