@@ -35,7 +35,7 @@ deftest_basic(fstream, file_io)
 
 The test is automatically registered with the test harness and executed when you call `test_harness::run`.
 
-## Installing into Your Project
+## Using in Your Project
 
 1. [Download](https://github.com/roskittle/pnp-test-framework/archive/master.zip) the repo to your machine.
 2. Copy the `test` folder (from within `code`) into your project.
