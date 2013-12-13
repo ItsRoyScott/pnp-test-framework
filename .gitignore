@@ -1,13 +1,26 @@
-# Compiled Object files
+# Files as a result of compilation
 *.slo
 *.lo
 *.o
-
-# Compiled Dynamic libraries
+*.pdb
 *.so
 *.dylib
-
-# Compiled Static libraries
 *.lai
 *.la
 *.a
+*.obj
+*.d
+*.log
+*.tlog
+*.exe
+
+# Project files
+Makefile
+*.sln
+*.opensdf
+*.suo
+*.filters
+*.user
+*.sdf
+*.vcxproj
+*.make
